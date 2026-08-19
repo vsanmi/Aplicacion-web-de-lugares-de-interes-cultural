@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<% include header %>
+<head>
+    <title>Perfil</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/logo.jpg">
+
+    	<!-- Kit de fontawesome (iconos) -->
+    <script src="https://kit.fontawesome.com/82defc5500.js" crossorigin="anonymous"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.title{
+    margin-left: 100px;
+    font-size: 40px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+.wrapper{
+    margin-top: 200px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 400px;
+    background: #7fac8b;
+    padding: 25px;
+    border-radius: 5px;
+    width: 700px;
+    font-family: 'Montserrat', sans-serif;
+}
+.wrapper .name{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 700; 
+}
+.wrapper .surname{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 700; 
+}
+.wrapper .gender{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 700; 
+}
+.wrapper .verified{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 700; 
+}
+.wrapper .email{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 700; 
+}
+
+
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            Perfil de usuario
+        </div>
+        <div class="name">
+            <h4 style="text-align: center;">Nombre: <%= user.name %></h4>
+        </div>
+        <div class="surname">
+            <h4 style="text-align: center;">Apellido: <%= user.surname %></h4>
+        </div>
+        <div class="gender">
+            <h4 style="text-align: center;">Género: <%= user.gender %></h4>
+        </div>
+        <div class="verified">
+            <h4 style="text-align: center;">Correo verificado: <%= user.email_is_verified %></h4>
+        </div>
+        <div class="email">
+            <h4 style="text-align: center;">Correo electrónico: <%= user.email %></h4>
+        </div>
+    </div>
+</body>
+<% include footer %>
+</html>

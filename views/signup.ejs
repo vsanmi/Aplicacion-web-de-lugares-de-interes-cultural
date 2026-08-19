@@ -1,0 +1,285 @@
+<html>
+    <head>
+
+        <title>Registro CulturApp</title>
+        <link rel="icon" type="image/x-icon" href="/assets/images/logo.jpg">
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+ 
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+body{
+    background: #7f7f7f;
+}
+.titulo{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 50px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.p1{
+    font: 'Montserrat', sans-serif;
+}
+.image{
+    position: absolute;
+    padding: 100px;
+    margin-top: 100px;
+}
+.wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registration_form{
+    margin-left: 800px;
+    background: #7fac8b;
+    padding: 25px;
+    border-radius: 5px;
+    width: 400px;
+}
+.registration_form .title{
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 700;
+}
+.form_wrap{
+    margin-top: 35px;
+}
+.form_wrap .input_wrap{
+    margin-bottom: 15px;
+}
+.form_wrap .input_wrap:last-child{
+    margin-bottom: 0;
+}
+.form_wrap .input_wrap label{
+    display: block;
+    margin-bottom: 3px;
+    color: white;
+}
+.form_wrap .input_grp{
+    display: flex;
+    justify-content: space-between;
+}
+.form_wrap .input_grp input[type="text"]{
+    width: 165px;
+}
+.form_wrap input[type="text"]{
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 10px;
+    outline: none;
+}
+.form_wrap input[type="text"]:focus{
+    border-color: #7f7f7f;
+}
+.form_wrap .input_grp input[type="email"]{
+    width: 165px;
+}
+.form_wrap input[type="email"]{
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 10px;
+    outline: none;
+}
+.form_wrap input[type="email"]:focus{
+    border-color: #7f7f7f;
+}
+.form_wrap .input_grp input[type="password"]{
+    width: 165px;
+}
+.form_wrap input[type="password"]{
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 10px;
+    outline: none;
+}
+.form_wrap input[type="password"]:focus{
+    border-color: #7f7f7f;
+}
+/*Género*/
+.registration_form .input_wrap .input_radio{
+    display: flex;
+}
+.registration_form .input_wrap .input_radio .input_radio_item{
+    background: #7f7f7f;
+    margin-right: 25px;
+    padding: 20px;
+    border-radius: 3px;
+    position: relative;
+    width: 100px;
+}
+.registration_form .input_wrap .input_radio .input_radio_item .radio_mark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.5s ease;
+
+}
+.registration_form .input_wrap .input_radio .input_radio_item .radio_mark .i{
+    margin-right: 5px;
+    display: inline-block;
+}
+.registration_form .input_wrap .input_radio .input_radio_item .radio{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.registration_form .input_wrap .input_radio .input_radio_item .radio:checked ~ .radio_mark{
+    color: white;
+    border-color: #000;
+}
+
+/*Botón registrarse*/
+.input_wrap .submit_btn{
+    margin-top: 20px;
+    width: 100%;
+    background: #7f7f7f;
+    padding: 10px;
+    border: 0;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    outline: none;
+}
+.input_wrap .submit_btn:hover{
+    background: #fff;
+}
+        </style>
+    <!-- Iconos (ionicons) -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <script>
+        //controlar la contraseña metida (minimo y maximo de caracteres)
+        function verifyPassword() {  
+          var pw = document.getElementById("pass").value;  
+          var pw2 = document.getElementById("confirmpass").value;
+         //minimos caracteres contraseña
+          if(pw.length < 8) {  
+             document.getElementById("message").innerHTML = "La contraseña debe tener al menos 8 caracteres";  
+             return false;  
+          }  
+          
+        //longitud máxima contraseña  
+          if(pw.length > 15) {  
+             document.getElementById("message").innerHTML = "La contraseña no debe exceder de 15 caracteres";  
+             return false;  
+          }
+
+        //confirmar contraseña (que coincidan ambas)
+            if(pw != pw2){
+                document.getElementById("message2").innerHTML = "Las contraseñas introducidas no coinciden";
+                return false;  
+          }
+        }
+                </script>
+
+    </head>
+    <body>  
+        <div class="titulo">
+            <p1>¿No tienes cuenta todavía? Únete a CulturApp</p1>
+        </div>
+        <div class="image">
+            <img src="assets/images/logo.jpeg" alt="logo CulturApp" width="500" height="333">
+        </div>
+        <div class="wrapper">
+            <div class="registration_form">
+                <div class="title">
+                    Registro
+                </div>
+                <form action="/signup" method="post" onsubmit ="return verifyPassword()" >
+                    <div class="form_wrap">
+                        <div class="input_grp">
+                            <div class="input_wrap">
+                                <label for="name">Nombre</label>
+                                <div class="input_item">
+                                    <input type="text" name="name" id="name" placeholder="Nombre" required>
+                                </div>
+                            </div>
+                            <div class="input_wrap">
+                                <label for="surname">Apellido</label>
+                                <div class="input_item">
+                                    <input type="text" name="surname" id="apellido" placeholder="Apellido" required>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="input_wrap">
+                                <label for="email">Correo electrónico</label>
+                                <div class="input_item">
+                                    <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+                                </div>
+                            </div>
+                            <div class="input_wrap">
+                                <label>Género</label>
+                                        <div class="input_radio">
+                                            <div class="input_radio_item">
+                                                <input type="radio" name="gender" id="male" class="radio" value="male">
+                                                <label for="male" class="radio_mark">
+                                                    <ion-icon name="male-outline"></ion-icon>
+                                                    Hombre
+                                                </label>
+                                            </div>
+                                            <div class="input_radio_item">
+                                                <input type="radio" name="gender" id="female" class="radio" value="female">
+                                                <label for="female" class="radio_mark">
+                                                    <ion-icon name="female-outline"></ion-icon>
+                                                    Mujer
+                                                </label>
+                                            </div>
+                                            <div class="input_radio_item">
+                                                <input type="radio" name="gender" id="other" class="radio" value="other">
+                                                <label for="other" class="radio_mark">
+                                                    <ion-icon name="male-female-outline"></ion-icon>
+                                                    Otro
+                                                </label>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="input_wrap">
+                                <label for="pass">Contraseña</label>
+                                <div class="input_item">
+                                    <input type="password" name="password" id="pass" placeholder="Contraseña" required>
+                                    <span id = "message" style="color:red"> </span>
+                                </div>
+                            </div>
+                            <div class="input_wrap">
+                                <label>Confirmar contraseña</label>
+                                <div class="input_item">
+                                    <input type="password" id="confirmpass" placeholder="Confirmar contraseña" required>
+                                    <span id = "message2" style="color:red"> </span>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="input_wrap">
+                        <button type="submit"  value="Registrarme" class="submit_btn">registrarme</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>
